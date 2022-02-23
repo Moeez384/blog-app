@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,5 +30,12 @@ Route::post('store-category', [CategoryController::class, 'store'])->name('categ
 Route::get('delete-category/{id}', [CategoryController::class, 'destroy'])->name('category.delete');
 Route::get('edit-category/{id}', [CategoryController::class, 'edit'])->name('category.edit');
 Route::post('update-category', [CategoryController::class, 'update'])->name('category.update');
+
+Route::get('all-blogs', [BlogController::class, 'index'])->name('blog.index');
+Route::get('delete-blog/{id}', [BlogController::class, 'destroy'])->name('blog.delete');
+Route::get('edit-blog/{id}', [BlogController::class, 'edit'])->name('blog.edit');
+Route::get('create-blog', [BlogController::class, 'create'])->name('blog.create');
+Route::post('store-blog', [BlogController::class, 'store'])->name('blog.store');
+
 
 require __DIR__ . '/auth.php';

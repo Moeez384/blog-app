@@ -14,20 +14,20 @@
                             <tr>
                                 <th>#</th>
                                 <th>Title</th>
-                                <th>Status</th>
+                                <th>Category</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($categories as $category)
+                            @foreach ($blogs as $blog)
                                 <tr>
                                     <th>{{ $loop->index + 1 }}</th>
-                                    <th>{{ $category->title }}</th>
-                                    <td>{{ $category->status }}</td>
+                                    <th>{{ $blog->title }}</th>
+                                    <td>{{ $blog->category }}</td>
                                     <td>
                                         <a class="btn btn-danger" style="background-color: red;"
-                                            href="{{ route('category.delete', $category->id) }}">Delete</a>
-                                        <a class="btn btn-primary" href="{{ route('category.edit', $category->id) }}"
+                                            href="{{ route('blog.delete', $blog->id) }}">Delete</a>
+                                        <a href="{{ route('blog.edit', $blog->id) }}" class="btn btn-primary"
                                             style="background-color: blue;" href="">Edit</a>
                                     </td>
                                 </tr>
